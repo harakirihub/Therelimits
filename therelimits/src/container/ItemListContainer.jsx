@@ -1,9 +1,9 @@
 
-function ItemListContainer ()
+function ItemListContainer (props)
 {
     return(
         <>
-        <h3>Greetings</h3>
+        <h3>{props.name} </h3>
         </>
     )
 }

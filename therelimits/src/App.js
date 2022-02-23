@@ -7,7 +7,7 @@ function App() {
   return (
     <>
     <NavBar/>
-    <ItemListContainer/>
+    <ItemListContainer name='Bienvenido a therelimits'/>
 
     </>
   );
