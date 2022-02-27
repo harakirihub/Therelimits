@@ -1,4 +1,4 @@
-import IconCart from "./cart.svg"
+import IconCart from "../assets/icons/cart.svg"
 import React from "react" 
 
 const CartWidget = () => {

@@ -1,6 +1,6 @@
 
 import React from "react"
-import CartWidget from "./CartWidget/CartWidget"
+import CartWidget from "../components/CartWidget"
 
 
 function NavBar(){
