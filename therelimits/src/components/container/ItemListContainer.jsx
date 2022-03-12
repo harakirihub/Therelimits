@@ -8,10 +8,10 @@ import utilityBag from "../../assets/images/utilityBag.svg"
 import { useParams } from 'react-router-dom'
 
 const productos = [
-    {id:1 ,nombre:"Hoodie", precio: "$6000", img: bhoodie},
-    {id:2 ,nombre:"Cargo Pants", precio: "$4000", img: cargo},
-    {id:3 ,nombre:"Piluso", precio: "$1000", img: piluso},
-    {id:4 ,nombre:"Morral Utilitario", precio: "$2000", img: utilityBag}
+    {id:1 ,nombre:"Hoodie", precio: "$6000", img: bhoodie, stock:8},
+    {id:2 ,nombre:"Cargo Pants", precio: "$4000", img: cargo, stock:8},
+    {id:3 ,nombre:"Piluso", precio: "$1000", img: piluso, stock:8},
+    {id:4 ,nombre:"Morral Utilitario", precio: "$2000", img: utilityBag, stock:8}
 ]
 
 function obtenerDatos(categoryid) {
@@ -50,10 +50,12 @@ function ItemListContainer (props) {
     } )
 
     return(
-        <>
+        <> 
+        <div>
         {props.name}
        <ItemList data={items} />
       
+        </div>    
         </>
     )
 }
