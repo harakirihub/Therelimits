@@ -8,10 +8,7 @@ function ItemList ({data}) {
     <div style={{display:"flex"}} >
       { data.map((productos) => {
             return <Item 
-            nombre={productos.nombre}
-            precio={productos.precio}
-            img={productos.img}
-            id={productos.id}
+            item = {productos}
             />
         } ) }
     </div>

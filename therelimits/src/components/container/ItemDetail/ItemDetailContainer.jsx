@@ -45,11 +45,7 @@ let requestDatos = new Promise ((resolve, reject)=>{
         <>
         <div className="container mb-3"> 
        <ItemDetail
-            nombre={item.nombre}
-            precio={item.precio}
-            img={item.img}
-            id={item.id}
-            stock={item.stock}
+          item={item}
             />
       </div>
         </>

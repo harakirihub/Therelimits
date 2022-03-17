@@ -2,8 +2,9 @@ import React, {useState} from 'react';
 
 
 
-function ItemCount  ({stock}) {
+function ItemCount  ({stock, addToCart}) {
     const [count, setCount]=useState(1)
+
     function suma(){
     if (count < stock){ setCount(count + 1)
     }
@@ -26,7 +27,7 @@ function ItemCount  ({stock}) {
     </div>
     <div className="container">
         <div className="text-center d-flex flex-column">
-            <button type="button" className="mt-4 btn btn-success cart button px-2">Agregar al carrito</button>
+            <button onClick={()=>addToCart(count)} type="button" className="mt-4 btn btn-success cart button px-2">Agregar al carrito</button>
             <small className="text-muted mt-2">Stock disponible: {stock} </small>
         </div>
     </div>
