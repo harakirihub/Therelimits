@@ -1,13 +1,15 @@
 import React, { useContext } from "react"
 import  CartContext  from "../../context/CartContext"
 import ItemCount from "../ItemCount/ItemCount"
-
+import { useState } from "react"
 
 function ItemDetail ({item}) {
+const [isInCart, setIsInCart] = useState(false);
 
-    const { addItem } = useContext(CartContext)
+    const { addItem, clearCart } = useContext(CartContext)
     function addToCart(qty){
         addItem(item, qty)
+        setIsInCart(true)
     }
     
     return (
@@ -18,7 +20,14 @@ function ItemDetail ({item}) {
                     <h3 className="card-title"> {item.nombre} </h3>
                     <img className="card-img-top" src={item.img} />
                     <h2> {item.precio} </h2>
+                {
+                    isInCart ?
+                    <button type="button" className="btn btn-info px-4 cart-button">Terminar compra</button> 
+                    :
                     <ItemCount addToCart={addToCart} stock={item.stock} />
+                }
+
+                <button onClick={clearCart} > Vaciar carrito</button>
                 </div>     
         </div>
         </div>
