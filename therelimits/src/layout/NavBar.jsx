@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import React from "react"
-import CartWidget from "../components/CartWidget"
+import CartWidget from "./CartWidget"
 
 
 function NavBar(){ 
@@ -19,11 +19,11 @@ return (
           <Link className="nav-link active" aria-current="page" to="/">Home</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/category/contacto">Contacto</Link>
+          <Link className="nav-link" to="/contacto">Contacto</Link>
         </li>
       </ul>
       <form className="d-flex">
-        <Link to="/category/cart">
+        <Link to="/cart">
         <CartWidget/>
         </Link>
       </form>

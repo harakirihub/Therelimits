@@ -1,10 +1,10 @@
 
 import { useEffect, useState } from "react"
 import ItemList from "./ItemList"
-import bhoodie from "../../assets/images/bhoodie.svg"
-import cargo from "../../assets/images/cargopants.svg"
-import piluso from "../../assets/images/piluso.svg"
-import utilityBag from "../../assets/images/utilityBag.svg"
+import bhoodie from "../../../assets/images/bhoodie.svg"
+import cargo from "../../../assets/images/cargopants.svg"
+import piluso from "../../../assets/images/piluso.svg"
+import utilityBag from "../../../assets/images/utilityBag.svg"
 import { useParams } from 'react-router-dom'
 
 const productos = [

@@ -2,6 +2,9 @@ import React, { useContext } from "react"
 import  CartContext  from "../../context/CartContext"
 import ItemCount from "../ItemCount/ItemCount"
 import { useState } from "react"
+import { Link } from "react-router-dom"
+
+
 
 function ItemDetail ({item}) {
 const [isInCart, setIsInCart] = useState(false);
@@ -9,7 +12,8 @@ const [isInCart, setIsInCart] = useState(false);
     const { addItem, clearCart } = useContext(CartContext)
     function addToCart(qty){
         addItem(item, qty)
-        setIsInCart(true)
+        setIsInCart(true) 
+
     }
     
     return (
@@ -22,12 +26,13 @@ const [isInCart, setIsInCart] = useState(false);
                     <h2> {item.precio} </h2>
                 {
                     isInCart ?
-                    <button type="button" className="btn btn-info px-4 cart-button">Terminar compra</button> 
+                    <button type="button" className="btn btn-info px-4 cart-button">
+                        <Link to="/cart">Terminar compra</Link></button> 
                     :
                     <ItemCount addToCart={addToCart} stock={item.stock} />
                 }
 
-                <button onClick={clearCart} > Vaciar carrito</button>
+                <button onClick={clearCart} >Vaciar carrito</button>
                 </div>     
         </div>
         </div>

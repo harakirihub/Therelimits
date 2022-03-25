@@ -8,6 +8,7 @@ const CartWidget = () => {
          <>
          
     <img src={IconCart}/>
+    
       
         </>
     )

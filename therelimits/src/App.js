@@ -1,9 +1,9 @@
 import ItemDetailContainer from './components/container/ItemDetail/ItemDetailContainer';
 import './App.css';
-import ItemListContainer from './components/container/ItemListContainer';
+import ItemListContainer from './components/container/ItemList/ItemListContainer';
 import NavBar from './layout/NavBar.jsx';
 import { CartContextProvider }from './components/context/CartContext';
-
+import Cart from './components/container/Cart/Cart';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import FromFb from './firebase/FromFb';
@@ -20,6 +20,7 @@ function App() {
           <Route path="/" element={<ItemListContainer name='Bienvenido a therelimits'/>}/>
           <Route path="/category/:categoryid" element={ <ItemListContainer name ="Bategoria de products"/>}/>
           <Route path="/item/:id" element={<ItemDetailContainer/>} />
+          <Route path="/cart" element={ <Cart/> }/>
         </Routes>
     </Router>
     </CartContextProvider>

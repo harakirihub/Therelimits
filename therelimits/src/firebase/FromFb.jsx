@@ -1,30 +1,31 @@
-import { getFirestore, collection, getDocs } from "firebase/firestore";
-
+import { collection, getDocs } from "firebase/firestore";
+import { getFirestoreDB } from "./firebaseConfig"
 import { useEffect, useState } from "react";
 
 const FromFb = () => {
     const [ productos, setProductos] = useState([])
     
-    useEffect(async () =>{
-        const db = getFirestore
-
-        const querySnapshot = await getDocs(collection(db, "products"))
-        let listaDeProductos = []
-        querySnapshot.forEach((doc)=>{
-            console.log(doc.data)
-            listaDeProductos.push(doc.data())
-        })
-        setProductos(listaDeProductos)
+    async function getProductos(){
+        const db = getFirestoreDB()
+        const documentSnapshot = getDocs(collection(db, "items"))
+    const items = await documentSnapshot   
+        setProductos(items.docs)
+        console.log(items.docs)
+}
 
 
-    }, [])
+useEffect(() => {
+    getProductos()
+}, [])
+
+
 
     return (
         <>
         <div>
            lista 
         </div>
-        {productos.map((p) => p.nombre )}
+        {productos.map((p) => <h1> {p.data().nombre} </h1>)}
         </>
     );
     
