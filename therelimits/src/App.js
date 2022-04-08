@@ -5,14 +5,12 @@ import NavBar from './layout/NavBar.jsx';
 import { CartContextProvider }from './components/context/CartContext';
 import Cart from './components/container/Cart/Cart';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
+import CartForm from './components/container/Cart/CartForm';
 import FromFb from './firebase/FromFb';
 
 function App() {
   return (
     <>
-
-    <FromFb/>
     <CartContextProvider>
     <Router>
     <NavBar/>
@@ -21,6 +19,7 @@ function App() {
           <Route path="/category/:categoryid" element={ <ItemListContainer name ="Bategoria de products"/>}/>
           <Route path="/item/:id" element={<ItemDetailContainer/>} />
           <Route path="/cart" element={ <Cart/> }/>
+          <Route path="/form" element={ <CartForm/> }/>
         </Routes>
     </Router>
     </CartContextProvider>

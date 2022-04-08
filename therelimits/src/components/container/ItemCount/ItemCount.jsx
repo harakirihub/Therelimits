@@ -18,9 +18,9 @@ function ItemCount  ({stock, addToCart}) {
        <>
 <div className="container">
     <div className="border-primary container mt-5">
-        <div className="btn-group" role="group" aria-label="Basic outiled example">
+        <div className="btn-group" role="group" >
             <button onClick={suma} type="button" className="btn btn-outline-primary"> + </button>
-            <span className="my-auto px-5">{count} </span>
+            <span className="my-auto px-3">{count} </span>
             <button onClick={resta} type="button" className="btn btn-outline-primary"> - </button>
         </div>
 
