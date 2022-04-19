@@ -4,21 +4,16 @@ import ItemCount from "../ItemCount/ItemCount"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 
-
-
 function ItemDetail ({item}) {
 const [isInCart, setIsInCart] = useState(false);
-
-    const { addItem, clearCart } = useContext(CartContext)
+    const { addItem } = useContext(CartContext)
     function addToCart(qty){
         addItem(item, qty)
         setIsInCart(true) 
-
     }
-    
     return (
         <>
-        <div className="col-md-3 container-md text-center" >
+        <div className="col-md-5 container-md text-center" >
             <div className="p- mb-5 rounded card">
                 <div className="card-body-bg">
                     <h3 className="card-title"> {item.nombre} </h3>
@@ -28,8 +23,7 @@ const [isInCart, setIsInCart] = useState(false);
                     isInCart ?
                     <>
                     <h5>Tu producto esta en el carrito de compras</h5>
-                    <button type="button" className="btn btn-info px-4 cart-button">
-                        
+                    <button type="button" className="btn btn-info px-4 cart-button">            
                         <Link to="/cart">Ver carrito</Link></button> 
                     </>    
                     :

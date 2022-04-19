@@ -6,7 +6,7 @@ import { CartContextProvider }from './components/context/CartContext';
 import Cart from './components/container/Cart/Cart';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import CartForm from './components/container/Cart/CartForm';
-import FromFb from './firebase/FromFb';
+
 
 function App() {
   return (

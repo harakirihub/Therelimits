@@ -7,7 +7,7 @@ const [ buyer, setBuyer] = useState({
     phone:'',
     mail:''
 })
-
+const [final, setFinal] = useState(false)
     function handleInput(event){
             const target = event.target
             const value = target.value
@@ -17,15 +17,22 @@ const [ buyer, setBuyer] = useState({
                 [nameInput]: value
             })
           }
-
         function handleSubmitEvent(evt){
           evt.preventDefault()
           onSubmit(buyer)
+          setFinal(true)
         }
         
-
-return (
-    <form className='container-md border '>
+return ( 
+  <>
+  { final ?
+  <>
+  <h1>Gracias por tu compra!</h1>
+  <h4>Te enviaremos la informacion del envio a tu contacto</h4>
+  </> 
+  :
+  <>
+    <form className='container-md border bg-light '>
     <br />
     <div>Para finalizar la compra por favor dejanos tu informacion!</div>
     <br />
@@ -50,13 +57,14 @@ return (
       </>
       <div className="form-text">Esta informacion es privada y no se compartira</div>
       
-        <button className='mb-3'onClick={handleSubmitEvent}>
+        <button className='mb-3 btn btn-success'onClick={handleSubmitEvent}>
           Crear orden
         </button>
     </div>
-
-    
 </form>
+  </>
+}   
+  </>
 )
 }
 

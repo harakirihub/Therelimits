@@ -17,17 +17,14 @@ function ItemListContainer (props) {
         console.log(errorReject);
         }).finally(()=>{
             console.log("Promise finished")
-        })
-        
+        })       
     }, [categoryid])
 
     return(
         <> 
-        <div className="container card-deck row">
-            
+        <div className="container card-deck row ">           
         {props.name}
-       <ItemList data={items} />
-       
+       <ItemList data={items} />      
         </div>    
         </>
     )

@@ -1,19 +1,13 @@
 import React, {useState} from 'react';
 
-
-
 function ItemCount  ({stock, addToCart}) {
     const [count, setCount]=useState(1)
-
     function suma(){
     if (count < stock){ setCount(count + 1)
-    }
-}
+    }}
     function resta() {
     if ( count > 1 ) {setCount( count - 1)
-    }
-}
-
+    }}
     return (
        <>
 <div className="container">
@@ -23,7 +17,6 @@ function ItemCount  ({stock, addToCart}) {
             <span className="my-auto px-3">{count} </span>
             <button onClick={resta} type="button" className="btn btn-outline-primary"> - </button>
         </div>
-
     </div>
     <div className="container">
         <div className="text-center d-flex flex-column">
@@ -32,7 +25,6 @@ function ItemCount  ({stock, addToCart}) {
             <small className="text-muted mt-2">Stock disponible: {stock} </small>
         </div>
     </div>
-
 </div>
        </>
     );
