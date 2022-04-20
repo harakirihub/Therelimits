@@ -15,7 +15,7 @@ function ItemDetailContainer (props) {
 
     return(
         <>
-        <div className="container mb-3"> 
+        <div className="container mb-3 mt-4"> 
        <ItemDetail
           item={item}/>
       </div>

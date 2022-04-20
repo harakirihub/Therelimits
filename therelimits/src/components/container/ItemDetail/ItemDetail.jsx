@@ -14,7 +14,7 @@ const [isInCart, setIsInCart] = useState(false);
     return (
         <>
         <div className="col-md-5 container-md text-center" >
-            <div className="p- mb-5 rounded card">
+            <div className="pt-3 mb-5 rounded card">
                 <div className="card-body-bg">
                     <h3 className="card-title"> {item.nombre} </h3>
                     <img className="card-img-top" src={item.img} />
@@ -25,6 +25,7 @@ const [isInCart, setIsInCart] = useState(false);
                     <h5>Tu producto esta en el carrito de compras</h5>
                     <button type="button" className="btn btn-info px-4 cart-button">            
                         <Link to="/cart">Ver carrito</Link></button> 
+                        <br />
                     </>    
                     :
                     <ItemCount addToCart={addToCart} stock={item.stock} />

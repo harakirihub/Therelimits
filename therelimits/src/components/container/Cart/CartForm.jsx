@@ -55,7 +55,7 @@ return (
           <input type="text" onChange={evt => handleInput(evt)} value={buyer.mail}  name="mail" />
         </div>
       </>
-      <div className="form-text">Esta informacion es privada y no se compartira</div>
+      <div className="form-text mb-3">Esta informacion es privada y no se compartira</div>
       
         <button className='mb-3 btn btn-success'onClick={handleSubmitEvent}>
           Crear orden

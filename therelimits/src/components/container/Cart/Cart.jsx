@@ -27,21 +27,21 @@ const { itemsCart, clearCart, getTotalPrice} = useContext (CartContext)
       sendOrder(order)
   }
     return (
-        <div className='text-center'>
-          <h2>Carrito de compras</h2>
+        <div className='text-center mt-2'>
+          <h2 className="mb-3">Carrito de compras</h2>
       {
         itemsCart.length === 0 ?    
         <>      
         <p>Su carrito esta vacío</p><br/>
         <h3>:(</h3><br/>
-        <Link to="/" ><button>Volver al catalogo</button></Link>
+        <Link to="/" ><button className="btn btn-primary">Volver al catalogo</button></Link>
         </>                   
         :
         <>       
       {itemsCart.map((producto) => {
         return <ItemCart item ={producto}/>
       })}   
-      <div>Total $ {getTotalPrice()} </div>
+      <div className="mb-3 mt-2">Total $ {getTotalPrice()} </div>
       <button onClick={clearCart}>Vaciar carrito</button>
       <Link to="/">
       <button>Seguir comprando</button>
