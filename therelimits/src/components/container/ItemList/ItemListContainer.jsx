@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import ItemList from "./ItemList"
 import { useParams } from 'react-router-dom'
-import { getProductos } from "../../../firebase/FromFb"
+import { getProductos, getProdByCat } from "../../../firebase/FromFb"
 
 function ItemListContainer (props) {
     const { categoryid } = useParams()
@@ -9,7 +9,10 @@ function ItemListContainer (props) {
     
     useEffect(
         () =>{
-        let requestDatos = getProductos(categoryid)
+        let requestDatos = getProductos()
+        let reqDatosCat = getProdByCat(categoryid)
+
+        if (categoryid === undefined){
         requestDatos
         .then((datosResolve)=>{
             setItems(datosResolve)})
@@ -17,7 +20,10 @@ function ItemListContainer (props) {
         console.log(errorReject);
         }).finally(()=>{
             console.log("Promise finished")
-        })       
+        })       }
+        else {
+            reqDatosCat.then((datRes)=>setItems(datRes))
+        }
     }, [categoryid])
 
     return(

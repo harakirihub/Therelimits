@@ -16,10 +16,11 @@ function App() {
     <NavBar/>
         <Routes>
           <Route path="/" element={<ItemListContainer name='Bienvenido a therelimits'/>}/>
-          <Route path="/category/:categoryid" element={ <ItemListContainer name ="Bategoria de products"/>}/>
+          <Route path="/categoria/:categoryid" element={ <ItemListContainer name ="Filtro por categorias"/>}/>
           <Route path="/item/:id" element={<ItemDetailContainer/>} />
           <Route path="/cart" element={ <Cart/> }/>
           <Route path="/form" element={ <CartForm/> }/>
+
         </Routes>
     </Router>
     </CartContextProvider>

@@ -1,4 +1,4 @@
-import { collection, getDocs, doc, addDoc, getDoc } from "firebase/firestore";
+import { collection, getDocs, doc, addDoc, getDoc, query, where } from "firebase/firestore";
 import { getFirestoreDB } from "./firebaseConfig"
 
 const db = getFirestoreDB()
@@ -28,4 +28,12 @@ export const getProductById = async (id) => {
         const docSnap = await getDoc(docRef);
         return docSnap.data()
       }
-
+export async function getProdByCat(categoria){
+        const miColec = collection (db, "items")
+        const myquery =query (miColec, where ("categoryid", "==", categoria))
+        const itemSnap = await getDocs (myquery)
+        const result = itemSnap.docs.map( item =>{
+                return { ...item.data(), id: item.id}
+        })
+        return result
+}
