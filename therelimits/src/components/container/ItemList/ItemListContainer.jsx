@@ -27,10 +27,12 @@ function ItemListContainer (props) {
     }, [categoryid])
 
     return(
-        <> 
-        <div className="container card-deck row ">           
+        <>
         {props.name}
+        <div className="row row-cols-md-3 g-5 me-5 ms-5 mt-3 ps-5 pe-5" >           
+       
        <ItemList data={items} />      
+       
         </div>    
         </>
     )
